@@ -1,9 +1,8 @@
-﻿using System.Net.Http.Headers;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
-namespace Daricheh.Services.Pichak.Application.RestHandler;
-
-public class RestClient 
+namespace RestClient;
+public class RestClient
 {
     private static HttpClient Client;
     public string EndPoint { get; set; }
@@ -96,3 +95,4 @@ public class RestClient<TRequestBody> : RestClient
         ContentHeaders = contentHeaders;
     }
 }
+
