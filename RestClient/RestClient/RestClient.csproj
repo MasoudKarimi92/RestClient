@@ -9,6 +9,8 @@
     <PackageProjectUrl>https://github.com/MasoudKarimi92/RestClient</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MasoudKarimi92/RestClient</RepositoryUrl>
     <PackageTags>HttpClient;RESTful;REST;Wrapper</PackageTags>
+    <PackageId>HttpClientHandler</PackageId>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -5,3 +5,5 @@
 /RestClient/RestClient/obj
 /RestClient/RestClient/bin/Debug/net6.0
 /RestClient/.vs/RestClient/v17
+/RestClient/RestClient/bin/Debug
+/RestClient/.vs/RestClient

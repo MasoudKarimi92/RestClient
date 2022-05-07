@@ -91,8 +91,6 @@ public class RestClient<TRequestBody> : RestClient
     {
         ContentType = contentType;
         PostData = JsonConvert.SerializeObject(postData);
-        RequestHeaders = requestHeaders;
-        ContentHeaders = contentHeaders;
     }
 }
 
