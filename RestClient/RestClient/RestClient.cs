@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace RestClient;
 public class RestClient
@@ -83,14 +83,14 @@ public class RestClient<TRequestBody> : RestClient
     public RestClient(string endpoint, HttpMethod method, TRequestBody postData, IDictionary<string, string> requestHeaders = null, IDictionary<string, string> contentHeaders = null)
         : base(endpoint, method, requestHeaders: requestHeaders, contentHeaders: contentHeaders)
     {
-        PostData = JsonConvert.SerializeObject(postData);
+        PostData = JsonSerializer.Serialize(postData);
     }
 
     public RestClient(string endpoint, HttpMethod method, TRequestBody postData, string contentType, IDictionary<string, string> requestHeaders = null, IDictionary<string, string> contentHeaders = null)
         : base(endpoint, method, requestHeaders: requestHeaders, contentHeaders: contentHeaders)
     {
         ContentType = contentType;
-        PostData = JsonConvert.SerializeObject(postData);
+        PostData = JsonSerializer.Serialize(postData);
     }
 }
 
