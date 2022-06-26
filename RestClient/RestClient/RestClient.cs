@@ -4,13 +4,18 @@ using System.Text.Json;
 namespace RestClient;
 public class RestClient
 {
-    private static readonly HttpClient Client = new HttpClient();
+    private static readonly HttpClient _client;
     public string EndPoint { get; set; }
     public HttpMethod Method { get; set; }
     public string ContentType { get; set; } = "application/json";
     public string PostData { get; set; }
     public IDictionary<string, string> RequestHeaders { get; set; }
     public IDictionary<string, string> ContentHeaders { get; set; }
+
+    static RestClient()
+    {
+        _client = new HttpClient();
+    }
 
     public RestClient(string endpoint, HttpMethod method, IDictionary<string, string> requestHeaders = null, IDictionary<string, string> contentHeaders = null)
     {
@@ -23,7 +28,7 @@ public class RestClient
 
     public HttpResponseMessage SendHttpRequest(string parameters = "")
     {
-        HttpResponseMessage response = Client.SendAsync(CreateHttpRequest(EndPoint + parameters)).Result;
+        HttpResponseMessage response = _client.SendAsync(CreateHttpRequest(EndPoint + parameters)).Result;
         return response;
     }
 
@@ -39,7 +44,7 @@ public class RestClient
 
     public async Task<HttpResponseMessage> SendHttpRequestAsync(string parameters = "")
     {
-        HttpResponseMessage response = await Client.SendAsync(CreateHttpRequest(EndPoint + parameters)).ConfigureAwait(false);
+        HttpResponseMessage response = await _client.SendAsync(CreateHttpRequest(EndPoint + parameters)).ConfigureAwait(false);
         return response;
     }
 

@@ -10,7 +10,7 @@
     <RepositoryUrl>https://github.com/MasoudKarimi92/RestClient</RepositoryUrl>
     <PackageTags>HttpClient;RESTful;REST;Wrapper</PackageTags>
     <PackageId>HttpClientHandler</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
 </Project>
