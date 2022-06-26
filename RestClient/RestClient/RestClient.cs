@@ -4,7 +4,7 @@ using System.Text.Json;
 namespace RestClient;
 public class RestClient
 {
-    private static HttpClient Client;
+    private static readonly HttpClient Client = new HttpClient();
     public string EndPoint { get; set; }
     public HttpMethod Method { get; set; }
     public string ContentType { get; set; } = "application/json";
@@ -14,7 +14,6 @@ public class RestClient
 
     public RestClient(string endpoint, HttpMethod method, IDictionary<string, string> requestHeaders = null, IDictionary<string, string> contentHeaders = null)
     {
-        Client = new HttpClient();
         EndPoint = endpoint;
         Method = method;
         PostData = "";
